@@ -147,20 +147,20 @@ function rotateLeft(link) {
 // Fonction 9 ---------------------------------------------
 
 let headerBtn = document.querySelector('strong');
-let onOrOff = false;
+let clicTarget = false;
 
 headerBtn.addEventListener('mousedown', function() {
-  onOrOff = true;
+  clicTarget = true;
 });
 
 document.addEventListener('click', function(event) {
   if (event.target !== headerBtn) {
-    onOrOff = false;
+    clicTarget = false;
   }
 });
 
 document.addEventListener('keydown', function(event) {
-  if (onOrOff === true) {
+  if (clicTarget === true) {
     switch(event.key) {
       case "a": case "A":
         console.log("Touche a (A) enfoncée");
