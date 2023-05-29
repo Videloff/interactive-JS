@@ -111,8 +111,74 @@ for (let card = 0; card < cards.length; card++) {
 // --------------------------------------------------------
 
 // Fonction 7 ---------------------------------------------
+
+let rightArrow = document.querySelector("a.btn-secondary");
+
+rightArrow.addEventListener('click', rotateRight);
+
+function rotateRight() {
+  let lastCard = cards[Number(cards.length) - 1];
+  let firstCard = cards[0];
+  let parentDiv = lastCard.parentNode;
+
+  parentDiv.insertBefore(lastCard, firstCard); 
+}
+
 // --------------------------------------------------------
+
 // Fonction 8 ---------------------------------------------
+
+let leftArrow = document.querySelector("a.btn-primary");
+leftArrow.disabled = true;
+
+leftArrow.addEventListener('click', rotateLeft);
+
+function rotateLeft(link) {
+  link.preventDefault();
+  let lastCard = cards[Number(cards.length) - 1];
+  let firstCard = cards[0];
+  let parentDiv = lastCard.parentNode;
+
+  lastCard.after(firstCard); 
+}
+
 // --------------------------------------------------------
+
 // Fonction 9 ---------------------------------------------
+
+let headerBtn = document.querySelector('strong');
+let onOrOff = false;
+
+headerBtn.addEventListener('mousedown', function() {
+  onOrOff = true;
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target !== headerBtn) {
+    onOrOff = false;
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (onOrOff === true) {
+    switch(event.key) {
+      case "a": case "A":
+        console.log("Touche a (A) enfoncée");
+        document.body.className = 'col-4';
+        break;
+      case "y": case "Y":
+        console.log("Touche y (Y) enfoncée");
+        document.body.className = 'col-4 offset-4';
+        break;
+      case "p": case "P":
+        console.log("Touche p (P) enfoncée");
+        document.body.className = 'col-4 offset-8';
+        break;
+      case "b": case "B":
+        console.log("Touche b (B) enfoncée");
+        document.body.className = '';
+        break;
+    }
+  }
+});
 // --------------------------------------------------------
