@@ -88,32 +88,24 @@ function nukeStrike() {
 
 // Fonction 6 ---------------------------------------------
 
-let viewBtns= document.querySelectorAll('button.btn-success');
-let cards = document.querySelectorAll('div.card');
-let cardsText = document.querySelectorAll('p.card-text');
-let cardsImg = document.querySelectorAll('img.card-img-top');
-let textsSaved = saveAllTexts();
+let cards = document.getElementsByClassName("col-md-4");
 
-function saveAllTexts() {
-  let texts = [];
+for (let card = 0; card < cards.length; card++) {
+  let btnEditCard = cards[card].getElementsByTagName("button")[0];
+  let textCard = cards[card].querySelector(".card-text");
+  let imgCard = cards[card].querySelector(".card-img-top")
 
-  cardsText.forEach((text, index) => {
-    texts[index] = cardsText[index].textContent;
-  });
-  return texts;
-}
+  btnEditCard.addEventListener('mouseover', reduceCard);
 
-viewBtns.forEach((btn, index) => {
-  btn.addEventListener('mouseover', () => {
-    if (cardsText[index].textContent !== "") {
-      cardsText[index].textContent = "";
-      cardsImg[index].style.width = '20%';
-    } else if (cardsText[index].textContent === "") {
-      cardsText[index].textContent = textsSaved[index];
-      cardsImg[index].style.width = '100%';
+  function reduceCard() {
+    textCard.classList.toggle("collapse");
+      if(imgCard.style.width == false) {
+      imgCard.style.width = '20%';
+    } else if(imgCard.style.width == '20%') {
+      imgCard.style.width = '';
     }
-  });
-});
+  }
+}
 
 
 // --------------------------------------------------------
