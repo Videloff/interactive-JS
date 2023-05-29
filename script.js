@@ -149,7 +149,7 @@ function rotateLeft(link) {
 let headerBtn = document.querySelector('strong');
 let clicTarget = false;
 
-headerBtn.addEventListener('mousedown', function() {
+headerBtn.addEventListener('click', function() {
   clicTarget = true;
 });
 
