@@ -72,30 +72,48 @@ let page = document.querySelector('body');
 let bootstrap = document.querySelector('link');
 let isNuke = false;
 
-navbar.addEventListener('dblclick', doubleClickNavbar);
-
-function doubleClickNavbar() {
-  if (isNuke === false) {
-    nukeStrike();
-  } else if (isNuke === true) {
-    nukeRepair();
-  }
-}
+navbar.addEventListener('dblclick', nukeStrike);
 
 function nukeStrike() {
-  bootstrap.disabled = true;
-  isNuke = true;
-}
-
-function nukeRepair() {
-  bootstrap.disabled = false;
-  isNuke = false;
+  if (isNuke === false) {
+    bootstrap.disabled = true;
+    isNuke = true;
+  } else if (isNuke === true) {
+    bootstrap.disabled = false;
+    isNuke = false;
+  }
 }
 
 // --------------------------------------------------------
 
 // Fonction 6 ---------------------------------------------
 
+let viewBtns= document.querySelectorAll('button.btn-success');
+let cards = document.querySelectorAll('div.card');
+let cardsText = document.querySelectorAll('p.card-text');
+let cardsImg = document.querySelectorAll('img.card-img-top');
+let textsSaved = saveAllTexts();
+
+function saveAllTexts() {
+  let texts = [];
+
+  cardsText.forEach((text, index) => {
+    texts[index] = cardsText[index].textContent;
+  });
+  return texts;
+}
+
+viewBtns.forEach((btn, index) => {
+  btn.addEventListener('mouseover', () => {
+    if (cardsText[index].textContent !== "") {
+      cardsText[index].textContent = "";
+      cardsImg[index].style.width = '20%';
+    } else if (cardsText[index].textContent === "") {
+      cardsText[index].textContent = textsSaved[index];
+      cardsImg[index].style.width = '100%';
+    }
+  });
+});
 
 
 // --------------------------------------------------------
