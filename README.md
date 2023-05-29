@@ -22,25 +22,25 @@ Read the provided hints to guide you through each functionality.
 
 ## Functionalities
 
-Functionality 1: When the user clicks on the footer (footer), display "clique" in the console.
+**Functionality 1**: When the user clicks on the footer (footer), display "clique" in the console.
   
-Functionality 1-bis: Enhance functionality 1 by displaying "clic numéro x" in the console, where x is the number of clicks starting from 1 and incrementing with each click.
+**Functionality 1-bis**: Enhance functionality 1 by displaying "clic numéro x" in the console, where x is the number of clicks starting from 1 and incrementing with each click.
   
-Functionality 2: Make the "Hamburger Menu" functional. When the user clicks the hamburger menu button, remove the "collapse" class from the element with the ID navbarHeader. Clicking again should add the "collapse" class back to navbarHeader.
+**Functionality 2**: Make the "Hamburger Menu" functional. When the user clicks the hamburger menu button, remove the "collapse" class from the element with the ID navbarHeader. Clicking again should add the "collapse" class back to navbarHeader.
 
-Functionality 3: If the user clicks the "Edit" button on the first card, the card's text should turn red irreversibly (unless the page is reloaded).
+**Functionality 3**: If the user clicks the "Edit" button on the first card, the card's text should turn red irreversibly (unless the page is reloaded).
 
-Functionality 4: Similar to functionality 3, when the user clicks the "Edit" button on the second card, the card's text should turn green. Clicking again should revert it to the original color.
+**Functionality 4**: Similar to functionality 3, when the user clicks the "Edit" button on the second card, the card's text should turn green. Clicking again should revert it to the original color.
 
-Functionality 5: Implement a hidden "nuclear" feature. If the user double-clicks on the navbar, the entire Bootstrap styling should disappear, leaving the page without CSS. Double-clicking again should restore the original styling.
+**Functionality 5**: Implement a hidden "nuclear" feature. If the user double-clicks on the navbar, the entire Bootstrap styling should disappear, leaving the page without CSS. Double-clicking again should restore the original styling.
 
-Functionality 6: When the user hovers over the "View" button of any card, the card should shrink. The text should disappear, the image should be reduced to 20% of its original size, and the "Edit" and "View" buttons should remain visible. Repeating the hover should restore the card to its original state.
+**Functionality 6**: When the user hovers over the "View" button of any card, the card should shrink. The text should disappear, the image should be reduced to 20% of its original size, and the "Edit" and "View" buttons should remain visible. Repeating the hover should restore the card to its original state.
 
-Functionality 7: Clicking the grey ==> button should move the last card (bottom right) to the first position (top left). This allows rotating the cards.
+**Functionality 7**: Clicking the grey ==> button should move the last card (bottom right) to the first position (top left). This allows rotating the cards.
 
-Functionality 8: Clicking the blue <== button should move the first card to the last position. It's the opposite of functionality 7.
+**Functionality 8**: Clicking the blue <== button should move the first card to the last position. It's the opposite of functionality 7.
 
-Functionality 9: Triggered by selecting the page logo ("JS & Events") and pressing a specific key.
+**Functionality 9**: Triggered by selecting the page logo ("JS & Events") and pressing a specific key.
 
 Key "a" condenses the page to 4 Bootstrap columns on the left.
 
